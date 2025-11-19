@@ -19,7 +19,7 @@ export default function AnimatedLogo() {
       <Image
         className="animated-logo"
         src="/logo.png"
-        alt="RingStrike logo"
+        alt="logo"
         width={300}
         height={200}
         priority

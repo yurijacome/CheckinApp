@@ -1,7 +1,7 @@
 
 
 .UserTurmaCard {
-    background-color: var(--mainColor1);
+    background-color: var(--themeColor1);
     color: rgb(0, 0, 0);
     width: 450px;
     height: 200px;
@@ -12,7 +12,7 @@
 }
 .UserTurmaCard:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.795);
+    box-shadow: var(--mainShadow);
     transition: 0.5s ease;
 }
 
@@ -34,7 +34,7 @@
     display: flex;
     padding-top: 35px;
     flex-direction: column;
-    background-color: var(--mainColor1);
+    background-color: var(--themeColor1);
 }
 
 
@@ -74,7 +74,7 @@
 .request-checkin-btn{
     width: 140px;
     height: 30px;
-    background-color: var(--mainColor3);
+    background-color: var(--mainColor);
     font-size: 14px;
     font-weight: 500;
     color: var(--fixedColor);

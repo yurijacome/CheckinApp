@@ -51,19 +51,23 @@ const handleRegister = async () => {
     }
 
     return (
-        <div className="registerBody" style={{backgroundImage: `url(${backgroundImage.src})`,}} >
+        <div className="registerBody" 
+          style={{
+          backgroundImage: `url(${backgroundImage.src})`, 
+          backgroundSize: "cover",
+          }}>
 
-        <Toastify />
+          <Toastify />
 
-        <Image
-          className="logo"
-          src="/logo.png"
-          alt="RingStrike logo"
-          width={400}
-          height={0}
-          priority
-            />
-        <h1>Registrar</h1>
+          <Image
+            className="logo"
+            src="/logo.png"
+            alt="RingStrike logo"
+            width={400}
+            height={0}
+            priority
+              />
+          <h1>Registrar</h1>
 
             <input type="text" placeholder="Email"
                 value={email} onChange={(e) => setEmail(e.target.value)}

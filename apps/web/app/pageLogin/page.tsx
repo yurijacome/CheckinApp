@@ -131,7 +131,10 @@ export default function Login() {
 
   // pagina de login
   return (
-    <div className="loginBody" style={{backgroundImage: `url(${backgroundImage.src})`,
+    <div className="loginBody" 
+    style={{
+      backgroundImage: `url(${backgroundImage.src})`, 
+      backgroundSize: "cover",
     }}>
         <Toastify />
       

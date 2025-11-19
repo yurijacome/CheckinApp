@@ -182,16 +182,16 @@ const RenderPerfil = () => {
           {!editMode ? (
             <>
               <button onClick={() => setEditMode(!editMode) } title="Editar" >
-                <Pen size={30} color="red" />
+                <Pen size={30} color="var(--mainColor)" />
               </button>
             </>
           ) : (
             <>
               <button onClick={() => handleEdit()} title="Salvar" >
-                <Check size={30} color="red"/>
+                <Check size={30} color="var(--mainColor)"/>
               </button>
               <button onClick={() => {setEditMode(false); setEditPassword(false)} } title="Cancelar">
-                <X size={30} color="red"/>
+                <X size={30} color="var(--mainColor)"/>
               </button>
             </>
           )}

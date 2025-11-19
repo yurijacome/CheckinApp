@@ -5,7 +5,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mainColor1);
+  background-color: var(--themeColor1);
   color: var(--mainColor2);
 }
 
@@ -34,14 +34,14 @@ nav {
 }
 Nav button {
   margin-right: 20px;
-  color: var(--mainColor2);
+  color: var(--mainColor);
   text-decoration: none;
   font-size: 22px;
   font-weight: 500;
   background: none;
 }
 Nav button:hover {
-  color: var(--mainColor3);
+  color: var(--secondColor);
 }
 
 .userButton {
@@ -49,11 +49,11 @@ Nav button:hover {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--mainColor2);
+  color: var(--mainColor);
   font-size: 32px;
 }
 .userButton:hover {
-  color: var(--mainColor3);
+  color: var(--secondColor);
 }
 
 .sidebar{
@@ -65,7 +65,7 @@ Nav button:hover {
   right: 0;
   width: 220px;
   height: 100%;
-  background-color: var(--fixedColor);
+  background-color: var(--themeColor1);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   padding: 20px;
   z-index: 1000;
@@ -81,7 +81,7 @@ Nav button:hover {
 }
 
 .sidebarSpan{
-  color: var(--fixedColor2);
+  color: var(--mainColor);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -92,13 +92,10 @@ Nav button:hover {
   margin-top: 15px;
   width: 150px;
   border-radius: 8px;
-  background: var(--mainColor3);
-  color: var(--fixedColor);
-  border: none;
 }
 .sidebarButton.Close{
   background: none;
-  color: var(--mainColor4);
+  color: var(--mainColor);
 }
 
 

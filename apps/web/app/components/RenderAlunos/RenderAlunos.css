@@ -12,8 +12,6 @@
 }
 
 .componentFilter button {
-  background-color: var(--mainColor3);
-  color: var(--fixedColor);
   margin-left: 20px;
   width: 120px;
   border-radius: 10px;
@@ -30,7 +28,7 @@
   width: 358px;
   height: 220px;
   border-radius: 10px;
-  background-color: var(--mainColor1);
+  background-color: var(--themeColor1);
   box-shadow: var(--mainShadowEase);
   display: flex;
   flex-direction: column;
@@ -47,10 +45,9 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  color: var(--mainColor3);
+  color: var(--mainColor);
 }
 .addNewUserCard:hover {
-  color: var(--mainColor3);
   box-shadow: var(--mainShadow);
 }
 .userCard:hover {
@@ -67,7 +64,7 @@
   align-items: center;
 }
 .Wpp {
-  color: var(--mainColor3);
+  color: var(--mainColor);
 }
 
 .actionButtons button {
@@ -92,7 +89,9 @@
 .cardLabel span.green {
   color: var(--confirmado);
 }
-
+.cardLabel span.red {
+  color: var(--span);
+}
 .cardLabel input {
   width: 100%;
   height: 30px;
@@ -115,12 +114,13 @@
   margin-left: 10px;
 }
 
-.selected {
-  background-color: var(--mainColor3);
+.AdmSelected {
+  background-color: var(--mainColor);
+  box-shadow: var(--buttonShadow);
 }
 
-.notSelected {
-  background-color: var(--mainColor4);
+.AdmNotSelected {
+  background-color: var(--mainColor2);
 }
 
 @media (max-width: 410px) {

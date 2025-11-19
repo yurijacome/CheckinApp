@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-    --header: rgb(0, 0, 0);
     --background: rgb(31, 31, 31);
 
     --mainColor: rgb(255, 2, 150);
+    --mainColor2: rgb(163, 1, 95);
+
     
     --fixedColor: rgb(255, 255, 255);
     --fixedColor2: rgb(0, 0, 0);
@@ -15,7 +16,7 @@
 
     --mainShadow: 0 2px 10px rgb(5, 5, 5);
     --mainShadowEase: 0 5px 20px rgba(0, 0, 0, 0.534);
-    --buttonShadow: 0 5px 10px rgba(255, 0, 0, 0.459);
+    --buttonShadow: 0 5px 10px rgba(255, 0, 179, 0.459);
 
 }   
 
@@ -89,12 +90,12 @@ footer {
   justify-content: center;
   align-items: center;
   height: 40px;
-  background-color: var(--mainColor1);
-  color: var(--mainColor2);
+  background-color: var(--themeColor1);
+  color: var(--mainColor);
 }
 
 h1 {
-  color: var(--mainColor2);
+  color: rgb(255, 255, 255);
   font-size: 2.5rem;
   font-weight: 600;
   margin-top: -50px;
@@ -110,7 +111,7 @@ h2{
 }
 
 h3{
-  color: rgb(0, 0, 0);
+  color: var(--mainColor2);
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -123,15 +124,15 @@ h4{
 }
 
 h5{
+  color: var(--mainColor);
   font-size: 16px;
-    font-weight: 500;
-    color: rgb(0, 0, 0);
+  font-weight: 500;
 }
 
 span{
     font-size: 16px;
     font-weight: 500;
-    color: var(--mainColor3);
+    color: var(--mainColor);
     font-family: var(--font-oswald);
     margin-bottom: 6px;
 }
@@ -149,7 +150,7 @@ input::placeholder{
 
 p{
   font-family: var(--font-oswald);
-  color : var(--fixedColor);
+  color : var(--mainColor);
 }
 
 

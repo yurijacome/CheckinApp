@@ -185,11 +185,11 @@ const UserCard = ({ user, onUserUpdated }) => {
             <FaWhatsapp size={20} />
           </button>
           <button onClick={() => setEditMode(true)} title="Editar usuario">
-            <Pen color="var(--mainColor3)" size={20}  
+            <Pen color="var(--mainColor)" size={20}  
 />
           </button>
           <button onClick={() => handleDelete()} title="Excluir usuario">
-            <Trash color="var(--mainColor3)" size={20} />
+            <Trash color="var(--mainColor)" size={20} />
           </button>
         </div>
       )}
@@ -238,7 +238,7 @@ const UserCard = ({ user, onUserUpdated }) => {
       <div className="cardLabel">
         <h4>Mensalidade:</h4>
         {!editMode ? (
-          <span className={user.mensalidade >= dataHoje ? "green" : ""}>
+          <span className={user.mensalidade >= dataHoje ? "green" : "red"}>
             {user.mensalidade
               ? user.mensalidade < dataHoje
                 ? `Vencida em ${mensalidadeUserFormatada(user)}`
@@ -301,11 +301,11 @@ const NewUserCard = ({ newCard, setNewCard, onUserUpdated }) => {
       <div className="userCard">
         <div className="actionButtons">
           <button onClick={handleAddUser}>
-            <Check color="var(--mainColor3)" size={20} />
+            <Check color="var(--mainColor)" size={20} />
           </button>
           <button onClick={() => setNewCard(false)}>
             {" "}
-            <X color="var(--mainColor3)" size={20} />
+            <X color="var(--mainColor)" size={20} />
           </button>
         </div>
         <div className="cardLabel">
@@ -336,13 +336,13 @@ const NewUserCard = ({ newCard, setNewCard, onUserUpdated }) => {
           <h4>Administrador?</h4>
           <div style={{ display: "flex", gap: "8px" }}>
             <button
-              className={isAdmin ? "selected" : "notSelected"}
+              className={isAdmin ? "AdmSelected" : "AdmNotSelected"}
               onClick={() => setIsAdmin(true)}
             >
               Sim
             </button>
             <button
-              className={!isAdmin ? "selected" : "notSelected"}
+              className={!isAdmin ? "AdmSelected" : "AdmNotSelected"}
               onClick={() => setIsAdmin(false)}
             >
               Não

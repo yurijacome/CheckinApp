@@ -10,7 +10,7 @@
 .CheckinTurmaCard {
   width: 480px;
   height: 500px;
-  background-color: var(--mainColor1);
+  background-color: var(--themeColor1);
   box-shadow: var(--mainShadowEase);
   border-radius: 10px;
   display: flex;
@@ -29,7 +29,7 @@
 
 .CheckinCardHeader {
   background-color: var(--fixedColor);
-  color: var(--mainColor1);
+  color: var(--themeColor1);
   width: 100%;
   padding: 15px 20px;
   display: flex;
@@ -68,7 +68,7 @@
 
 .checkin-btn {
   border-radius: 10px;
-  background-color: var(--mainColor4);
+  background-color: var(--mainColor2);
   color: var(--fixedColor);
   width: 45%;
   height: 40px;
@@ -77,16 +77,15 @@
 }
 
 .checkin-btn.active {
-  background-color: var(--mainColor3);
-  box-shadow: var(--mainShadow);
+  background-color: var(--mainColor);
+  box-shadow: var(--buttonShadow);
 }
 
 .checkinsArea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--mainColor4);
-  color: var(--mainColor2);
+  background-color: var(--mainColor2);
   border-radius: 10px;
   height: 310px;
   margin-top: 20px;
@@ -117,7 +116,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--mainColor3);
+  background-color: var(--fixedColor);
   border-radius: 10px;
   height: 100%;
   width: 100%;
@@ -143,7 +142,7 @@
   border-radius: 5px;
   border: 2px solid var(--fixedColor2);
   background-color: rgb(255, 255, 255);
-  color: var(--mainColor3);
+  color: var(--mainColor);
   font-size: 14px;
   width: 200px;
   height: 30px;

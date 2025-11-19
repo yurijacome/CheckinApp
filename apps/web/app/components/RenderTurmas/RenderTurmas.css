@@ -3,7 +3,7 @@
 .TurmaCard {
   width: 480px;
   height: 260px;
-  background-color: var(--mainColor1);
+  background-color: var(--themeColor1);
   border-radius: 10px;
   transition: 0.5s ease;
 }
@@ -15,7 +15,6 @@
 .TurmaCard.Add p {
   font-size: 140px;
   font-weight: 500;
-  color: var(--mainColor3);
 }
 
 .CardHeader {
@@ -29,7 +28,6 @@
   padding-left: 25px;
   border-radius: 10px 10px 0px 0px;
   border-bottom: 1px solid rgb(0, 0, 0);
-  color: var(--mainColor1);
 }
 .CardHeaderInfo{
   display: flex;
@@ -101,21 +99,20 @@
   transition: all 0.2s ease;
   font-size: 16px;
   font-weight: 500;
-  color: var(--mainColor3);
+  color: var(--mainColor);
   text-align: center;
   width: 50px;
 }
 .timewheel-item.selected {
-  background: #ff0000;
-  color: white;
-  font-weight: bold;
+  background: var(--mainColor);
+  color: var(--fixedColor);
   transform: scale(1.1);
   border: none;
 }
 .timewheel-separator {
   font-size: 24px;
   font-weight: bold;
-  color: var(--mainColor3);
+  color: var(--mainColor);
   margin: 0 5px;
 }
 
@@ -143,7 +140,7 @@
   border-radius: 5px;
   border: 1px solid black;
   background-color: var(--fixedColor);
-  color: var(--mainColor3);
+  color: var(--mainColor);
   font-size: 14px;
   font-weight: 500;
   width: 100px;
@@ -152,7 +149,7 @@
 }
 .TimeArea option {
   background-color: white;
-  color: var(--mainColor3);
+  color: var(--mainColor);
 }
 
 /* Calendario Styles */
@@ -167,7 +164,7 @@
   font-weight: 600;
   background-color: white;
   border: 1px solid black;
-  color: var(--mainColor3);
+  color: var(--mainColor);
 
 }
 

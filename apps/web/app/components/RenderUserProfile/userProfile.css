@@ -11,7 +11,7 @@
     justify-content: flex-start;
     align-items: center;
     gap:10px;
-    background-color: var(--mainColor1);
+    background-color: var(--themeColor1);
 
 
 }
@@ -57,7 +57,7 @@
 }
 
 .passwordButton {
-    background-color: var(--mainColor4);
+    background-color: var(--mainColor);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -66,11 +66,11 @@
 }
 
 .passwordButton:hover {
-    background-color: var(--mainColor3);
+    background-color: var(--mainColor2);
 }
 
 .selected {
-    background-color: var(--mainColor3);
+    background-color: var(--mainColor2);
     box-shadow: var(--buttonShadow);
 }
 

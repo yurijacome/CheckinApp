@@ -14,7 +14,7 @@ export default function ThemeToggleButton() {
         right: 20,
         borderRadius: 8,
         border: "none",
-        background: "var(--main-color2)",
+        background: "none",
         cursor: "pointer",
         width: 30,
         height: 30,
@@ -23,7 +23,7 @@ export default function ThemeToggleButton() {
         justifyContent: "center",
       }}
     >
-      {theme === "light" ? <Moon size={100} color="red"/> : <Sun  size={100} color="red"/>}
+      {theme === "light" ? <Moon size={100} color="var(--mainColor)"/> : <Sun  size={100} color="var(--mainColor)"/>}
     </button>
   );
 }

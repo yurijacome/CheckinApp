@@ -25,8 +25,8 @@
 .loading-spinner::before {
   width: 100%;
   height: 100%;
-  border-top-color: var(--mainColor3);
-  border-right-color:var(--mainColor3);
+  border-top-color: var(--themeColor1);
+  border-right-color:var(--themeColor1);
 }
 
 .loading-spinner::after {
@@ -34,8 +34,8 @@
   height: 70%;
   top: 15%;
   left: 15%;
-  border-bottom-color:var(--fixedColor);
-  border-left-color: var(--fixedColor);
+  border-bottom-color:var(--mainColor);
+  border-left-color: var(--mainColor);
   animation-direction: reverse;
   animation-duration: 1s;
 }
@@ -52,13 +52,13 @@
 .loading-text {
   margin-top: 1.5rem;
   font-size: 1.125rem;
-  color: var(--fixedColor);
+  color: var(--themeColor1);
   font-weight: 500;
 }
 
 .loading-dots {
   display: inline-block;
-  color: var(--fixedColor);
+  color: var(--themeColor1);
 }
 
 .loading-dots::after {
@@ -84,5 +84,5 @@
 .loading-subtext {
   margin-top: 0.5rem;
   font-size: 0.875rem;
-  color: var(--mainColor3);
+  color: var(--themeColor1);
 }

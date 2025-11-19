@@ -164,10 +164,10 @@ const GenerateTurmaCards = () => {
               }}
               style={{
                 backgroundColor: isSelected
-                  ? "rgb(255, 0, 0)"
-                  : "rgba(255, 0, 0, 0.1)",
+                  ? "var(--mainColor)"
+                  : "var(--mainColor2)",
                 boxShadow: isSelected
-                  ? "0 0px 8px 1px rgba(252, 0, 0, 100.548)"
+                  ? "0 0px 8px 1px var(--mainColor2)"
                   : "none",
                 scale: isSelected ? 1.1 : 1,
               }}
@@ -322,19 +322,19 @@ const GenerateTurmaCards = () => {
             {editMode ? (
               <>
                 <button onClick={handleSave} title="Salvar alterações">
-                  <Check color="red" size={24} />
+                  <Check color="var(--mainColor)" size={24} />
                 </button>
                 <button onClick={handleCancel} title="Cancelar edição">
-                  <X color="red" size={24} />
+                  <X color="var(--mainColor)" size={24} />
                 </button>
               </>
             ) : (
               <>
                 <button onClick={() => setEditMode(true)} title="Editar turma">
-                  <Pen color="red" size={24} />
+                  <Pen color="var(--mainColor)" size={24} />
                 </button>
                 <button onClick={() => DeleteTurma()} title="Deletar turma">
-                  <Trash color="red" size={24} />
+                  <Trash color="var(--mainColor)" size={24} />
                 </button>
               </>
             )}

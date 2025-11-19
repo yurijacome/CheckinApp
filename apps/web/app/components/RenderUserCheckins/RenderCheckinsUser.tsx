@@ -183,7 +183,7 @@ const CheckinsUser = () => {
     return (
       <div className="UserTurmaCard">
         <div className="UserTurmaCardHeader">
-          <h3>Turma</h3>
+          <h3>Turma : </h3>
           <span>{turma.nome}</span>
         </div>
 
