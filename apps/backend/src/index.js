@@ -15,7 +15,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://ringstrike.vercel.app'], // Allow localhost and production domain
+  origin: ['http://localhost:3000', 'https://checkinapp-lime.vercel.app/'], // Allow localhost and production domain
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization']
