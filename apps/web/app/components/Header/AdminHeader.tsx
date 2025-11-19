@@ -3,6 +3,7 @@
 import Logo from "@/assets/logo.png";
 import "./header.css";
 import { useAdminContext } from "@/context/AdminContext";
+import { useRouter } from "next/navigation";
 
 import { useAuth } from "@/context/AuthContext";
 import { useState } from "react";
@@ -16,11 +17,17 @@ const AdminHeader = () => {
 
   const { user, logout } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const router = useRouter();
   
 
   const handleNavigation = (component: string) => {
     setActiveComponent(component as any);
   };
+
+    const handleRouter = () => {
+        router.push('/pageUser');
+    }
 
   const handleLogout = async () => {
     const confirmLogout = window.confirm("Deseja deslogar?");
@@ -36,6 +43,14 @@ const AdminHeader = () => {
   return (
     <header>
       <img src={Logo.src} alt="Logo" className="logo" />
+
+      <button
+          onClick={() => handleRouter()}
+          className="NavButton"
+      >
+          Pagina de Usuario
+      </button>
+
       <div className="welcome">
       <h4>Bem-vindo, </h4>
       <span className="user">{user?.nome}</span>
