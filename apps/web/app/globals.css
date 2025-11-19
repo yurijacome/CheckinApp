@@ -4,10 +4,7 @@
     --header: rgb(0, 0, 0);
     --background: rgb(31, 31, 31);
 
-    --mainColor1: rgb(10, 10, 10);
-    --mainColor2: rgb(255, 255, 255);
-    --mainColor3: rgb(255, 0, 0);
-    --mainColor4: rgb(27, 27, 27);
+    --mainColor: rgb(255, 2, 150);
     
     --fixedColor: rgb(255, 255, 255);
     --fixedColor2: rgb(0, 0, 0);
@@ -41,9 +38,8 @@ body {
 }
 
 .Toastify__toast {
-  background: var(--mainColor1) !important;
+  background: var(--fixedColor) !important;
   border-radius: 8px !important;
-  color: var(--mainColor2) !important;
   font-family: var(--font-oswald) !important;
   font-size: 14px !important;
   font-weight: bold !important;
@@ -54,7 +50,7 @@ body {
 }
 
 .Toastify__progress-bar {
-  background: var(--mainColor3) !important;
+  background: var(--mainColor) !important;
   
 }
 
@@ -143,8 +139,12 @@ span{
 input{
       font-family: var(--font-oswald);
       background-color: rgb(255, 255, 255);
-      color: var(--mainColor3);
+      color: var(--mainColor);
 
+}
+
+input::placeholder{
+  color: #6d0049;
 }
 
 p{
@@ -159,7 +159,7 @@ button {
   border: none;
   font-weight: 500;
   color: var(--fixedColor);
-  background-color: var(--mainColor3);
+  background-color: var(--mainColor);
   
 }
 

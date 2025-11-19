@@ -1,5 +1,5 @@
 {
-  "name": "ringstrike-monorepo",
+  "name": "checkin-app-monorepo",
   "version": "1.0.0",
   "packageManager": "npm@11.4.2",
   "private": true,

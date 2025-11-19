@@ -1,10 +1,13 @@
 "use client"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { validateRegister, validateEditUser } from "@/utils/validators";
-import { getUsers, editUser, addUser, deleteUser } from "@/services/getUsers";
-
+import { validateRegister} from "@/utils/validators";
+import { addUser} from "@/services/getUsers";
+import Toastify from "@/app/components/Toastify/Toastify";
+import { toast } from 'react-toastify';
 import Image from "next/image";
+import backgroundImage from "@/assets/background.png";
+
 import "./page.css"
 
 
@@ -34,10 +37,11 @@ const handleRegister = async () => {
     const response = await addUser(body);
 
     if (response) {
-      alert("Usuário criado com sucesso!");
+      toast.success("Usuário criado com sucesso!");
     }
+    router.push('/pageLogin');
   } catch (error: any) {
-    alert("Erro ao adicionar usuário: " + error.message);
+    toast.error("Erro ao adicionar usuário: " + error.message);
   }
 };
 
@@ -47,7 +51,9 @@ const handleRegister = async () => {
     }
 
     return (
-        <div className="registerBody">
+        <div className="registerBody" style={{backgroundImage: `url(${backgroundImage.src})`,}} >
+
+        <Toastify />
 
         <Image
           className="logo"

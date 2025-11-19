@@ -29,7 +29,6 @@
   margin-bottom: 10px;
   font-size: 32px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  color: var(--fixedColor);
 }
 
 .LoginInput{
@@ -39,9 +38,7 @@
   margin-bottom: 20px;
   border: none;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.9);
   font-size: 16px;
-  color: #333;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -53,24 +50,19 @@
   transform: translateY(-2px);
 }
 
-.LoginInput::placeholder{
-  color: #666;
-}
 
 .loginButton {
   width: 100%;
   max-width: 250px;
   height: 40px;
   border-radius: 25px;
-  background:var(--mainColor3);
-  color: white;
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 15px;
 }
 
 .loginButton:hover {
-  background: #fc0000;
+  background: #fc00da;
   transform: translateY(-2px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
@@ -87,7 +79,6 @@
     border: none;
     border-radius: 25px;
     background:none;
-    color: rgb(255, 0, 0);
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;

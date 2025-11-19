@@ -124,8 +124,7 @@ export default function Login() {
   }
 
   const handleRegister = () => {
-    toast.error("cadastro desativado");
-    // router.push('/pageRegister');
+    router.push('/pageRegister');
   };
   // #endregion
 
@@ -139,7 +138,7 @@ export default function Login() {
         <Image
           className="loginLogo"
           src="/logo.png"
-          alt="RingStrike logo"
+          alt="Logo"
           width={400}
           height={0}
           priority
