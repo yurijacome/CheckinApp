@@ -45,7 +45,7 @@ const UserHeader = () => {
   };
 
       const handleRouter = () => {
-        router.push('/pageUser');
+        router.push('/pageAdmin');
     }
 
   const handleLogout = async () => {
@@ -65,7 +65,7 @@ const UserHeader = () => {
 
       <button
           onClick={() => handleRouter()}
-          className="NavButton"
+          className="DemoButton"
       >
           Pagina de Administrador
       </button>

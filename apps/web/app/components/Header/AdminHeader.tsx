@@ -46,7 +46,7 @@ const AdminHeader = () => {
 
       <button
           onClick={() => handleRouter()}
-          className="NavButton"
+          className="DemoButton"
       >
           Pagina de Usuario
       </button>
