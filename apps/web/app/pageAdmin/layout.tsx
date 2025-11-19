@@ -12,7 +12,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ProtectedRoute requireAdmin={true}>
+    <ProtectedRoute requireAdmin={false}>
       <AdminProvider>
         <div className="admin-container">
           <AdminHeader />
