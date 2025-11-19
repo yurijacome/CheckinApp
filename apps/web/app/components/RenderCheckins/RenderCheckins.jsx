@@ -11,6 +11,7 @@ import {
   DeleteCheckin,
   CreateCheckin,
 } from "@/services/getCheckins";
+import { useAuth } from '@/context/AuthContext';
 
 import Loading from "../Loading/Loading";
 import { toast } from 'react-toastify';
@@ -26,6 +27,8 @@ const RenderCheckins = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadingCheckins, setLoadingCheckins] = useState({});
+  const { user } = useAuth();
+  const canEdit = !!user?.isAdmin;
 
   // Fetch turmas and checkins and users
   const fetchData = async () => {
@@ -195,7 +198,9 @@ const RenderCheckins = () => {
 
         <button
           className="checkinButton"
-          onClick={() => handleAddNewCheckin()}
+          onClick={() => canEdit && handleAddNewCheckin()}
+          disabled={!canEdit}
+          title={canEdit ? "Solicitar" : "Somente administradores"}
         >
           Solicitar
         </button>
@@ -313,11 +318,12 @@ const RenderCheckins = () => {
                     </div>
 
                     <div>
-                      {checkin.checkinstatus === "Solicitado" ? (
+                        {checkin.checkinstatus === "Solicitado" ? (
                         <button
-                          onClick={() => handleConfirm(checkin.id)}
+                          onClick={() => canEdit && handleConfirm(checkin.id)}
                           className="checkinButton confirm-btn"
-                          disabled={loadingCheckins[checkin.id]}
+                          disabled={loadingCheckins[checkin.id] || !canEdit}
+                          title={canEdit ? "Confirmar" : "Somente administradores"}
                         >
                           {loadingCheckins[checkin.id]
                             ? "Confirmando"
@@ -325,9 +331,10 @@ const RenderCheckins = () => {
                         </button>
                       ) : (
                         <button
-                          onClick={() => handleDelete(checkin.id)}
+                          onClick={() => canEdit && handleDelete(checkin.id)}
                           className="checkinButton cancel-btn"
-                          disabled={loadingCheckins[checkin.id]}
+                          disabled={loadingCheckins[checkin.id] || !canEdit}
+                          title={canEdit ? "Cancelar" : "Somente administradores"}
                         >
                           {loadingCheckins[checkin.id]
                             ? "Cancelando..."

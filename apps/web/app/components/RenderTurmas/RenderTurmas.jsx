@@ -2,6 +2,7 @@
 
 import "./RenderTurmas.css";
 import { useState, useEffect, useRef } from "react";
+import { useAuth } from '@/context/AuthContext';
 
 import { API_BASE_URL } from "@/services/api";
 import { getTurmas } from "@/services/getTurmas";
@@ -21,6 +22,8 @@ const GenerateTurmaCards = () => {
   const [turmas, setTurmas] = useState([]);
   const [showNewCard, setShowNewCard] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { user } = useAuth();
+  const canEdit = !!user?.isAdmin;
 
   // Busca as turmas na API quando o componente monta
   useEffect(() => {
@@ -196,6 +199,8 @@ const GenerateTurmaCards = () => {
 
   //Card de turma padrão
   const TurmaCard = ({ turma }) => {
+    const { user } = useAuth();
+    const canEdit = !!user?.isAdmin;
     const [editMode, setEditMode] = useState(false);
     const [nome, setNome] = useState(turma.nome);
     const [horario, setHorario] = useState(turma.horario);
@@ -321,7 +326,7 @@ const GenerateTurmaCards = () => {
           <div className="CardActions">
             {editMode ? (
               <>
-                <button onClick={handleSave} title="Salvar alterações">
+                <button onClick={handleSave} title="Salvar alterações" disabled={!canEdit}>
                   <Check color="var(--mainColor)" size={24} />
                 </button>
                 <button onClick={handleCancel} title="Cancelar edição">
@@ -330,10 +335,10 @@ const GenerateTurmaCards = () => {
               </>
             ) : (
               <>
-                <button onClick={() => setEditMode(true)} title="Editar turma">
+                <button onClick={() => canEdit && setEditMode(true)} title={canEdit ? "Editar turma" : "Somente administradores"} disabled={!canEdit}>
                   <Pen color="var(--mainColor)" size={24} />
                 </button>
-                <button onClick={() => DeleteTurma()} title="Deletar turma">
+                <button onClick={() => canEdit && DeleteTurma()} title={canEdit ? "Deletar turma" : "Somente administradores"} disabled={!canEdit}>
                   <Trash color="var(--mainColor)" size={24} />
                 </button>
               </>
@@ -393,7 +398,8 @@ const GenerateTurmaCards = () => {
   };
 
   // torna visivel o card de criar turma
-  const CreateNewTurmaCard = () => {
+  const CreateNewTurmaCard = (canEdit) => {
+    if (!canEdit) return;
     setShowNewCard(true);
   };
 
@@ -482,7 +488,7 @@ const GenerateTurmaCards = () => {
           </div>
 
           <div className="CardActions">
-            <button onClick={AddTurma} title="Salvar turma">
+              <button onClick={AddTurma} title="Salvar turma">
               <Check color="red" size={24} />
             </button>
             <button onClick={() => setShowNewCard(false)} title="Cancelar">
@@ -549,7 +555,7 @@ const GenerateTurmaCards = () => {
             {showNewCard && (
               <NewTurmaCard onCancel={() => setShowNewCard(false)} />
             )}
-            <button className="TurmaCard Add" onClick={CreateNewTurmaCard} title="Adicionar nova turma">
+            <button className="TurmaCard Add" onClick={() => CreateNewTurmaCard(canEdit)} title={canEdit ? "Adicionar nova turma" : "Somente administradores"} disabled={!canEdit}>
               <p>+</p>
             </button>
         

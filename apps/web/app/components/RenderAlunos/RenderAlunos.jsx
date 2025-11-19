@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { getUsers, editUser, addUser, deleteUser } from "@/services/getUsers";
 import { validateRegister, validateEditUser } from "@/utils/validators";
 
+import { useAuth } from '@/context/AuthContext';
+
 import Loading from "../Loading/Loading";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -91,6 +93,8 @@ const dataHoje = Hoje.toISOString();
 
 // Card Principal
 const UserCard = ({ user, onUserUpdated }) => {
+  const { user: currentUser } = useAuth();
+  const canEdit = !!currentUser?.isAdmin;
   const [editMode, setEditMode] = useState(false);
   const [nome, setNome] = useState(user.nome || "");
   const [email, setEmail] = useState(user.email || "");
@@ -184,11 +188,11 @@ const UserCard = ({ user, onUserUpdated }) => {
           >
             <FaWhatsapp size={20} />
           </button>
-          <button onClick={() => setEditMode(true)} title="Editar usuario">
+          <button onClick={() => canEdit && setEditMode(true)} title={canEdit ? "Editar usuario" : "Somente administradores"} disabled={!canEdit}>
             <Pen color="var(--mainColor)" size={20}  
 />
           </button>
-          <button onClick={() => handleDelete()} title="Excluir usuario">
+          <button onClick={() => canEdit && handleDelete()} title={canEdit ? "Excluir usuario" : "Somente administradores"} disabled={!canEdit}>
             <Trash color="var(--mainColor)" size={20} />
           </button>
         </div>
@@ -261,6 +265,8 @@ const UserCard = ({ user, onUserUpdated }) => {
 
 // Renderização do card de adicionar novo aluno
 const NewUserCard = ({ newCard, setNewCard, onUserUpdated }) => {
+  const { user: currentUser } = useAuth();
+  const canEdit = !!currentUser?.isAdmin;
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -297,7 +303,7 @@ const NewUserCard = ({ newCard, setNewCard, onUserUpdated }) => {
 
   // Renderização do card
   return (
-    newCard && (
+    newCard && canEdit && (
       <div className="userCard">
         <div className="actionButtons">
           <button onClick={handleAddUser}>
@@ -357,6 +363,8 @@ const NewUserCard = ({ newCard, setNewCard, onUserUpdated }) => {
 
 // Renderização principal de alunos
 const RenderAlunos = () => {
+  const { user } = useAuth();
+  const canEdit = !!user?.isAdmin;
   const [loading, setLoading] = useState(true);
   const [alunos, setAlunos] = useState([]);
   const [newCard, setNewCard] = useState(false);
@@ -433,7 +441,7 @@ const RenderAlunos = () => {
             onUserUpdated={fetchAlunos}
           />
         ) : null}
-        <button onClick={() => setNewCard(true)} className="addNewUserCard" title="Adicionar novo aluno">
+        <button onClick={() => canEdit && setNewCard(true)} className="addNewUserCard" title={canEdit ? "Adicionar novo aluno" : "Somente administradores"} disabled={!canEdit}>
           +
         </button>
       </div>
