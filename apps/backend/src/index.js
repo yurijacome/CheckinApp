@@ -14,12 +14,31 @@ const port = process.env.PORT || 3001;
 const SECRET_KEY = process.env.SECRET_KEY;
 
 // Middleware
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://checkinapp-lime.vercel.app/'], // Allow localhost and production domain
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+
+// Configure CORS allowed origins. You can set `ALLOWED_ORIGINS` as a comma-separated
+// env var (e.g. "http://localhost:3000,https://your-frontend.vercel.app").
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",").map((s) => s.trim())
+  : [
+      'http://localhost:3000',
+      'https://checkinapp-lime.vercel.app',
+    ];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow requests with no origin (e.g. curl, server-to-server)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With'],
+  })
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
